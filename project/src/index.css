@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.timer-box {
+  background: linear-gradient(135deg, #2d3748, #1a202c); /* Darker gradient */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+  animation: fadeIn 0.5s ease-in-out, pulse 1.5s infinite;
+  color: #f7fafc; /* Light text color */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(139, 92, 246, 0.3); }
+  50% { border-color: rgba(139, 92, 246, 0.8); }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.ironman-bg {
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('https://media-hosting.imagekit.io//db37d04b3c264554/main theme.webp?Expires=1832353119&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=UI0YtZbPI40Vtm7CGTTvDwW2H1XGTJVbhqXef5k3cgCx-5sSFzYR2lWCKCaWIbWnZr752~7eIdeGclz0mvUCnGm30yG8SnCcbjkpB~0u9qJ4g9XUdgqvm-LOubA2TnF-Yyg5bJBBPV758aiNTsf9z0~DpqBZav9L0KSj0CeDKiPjs4sP4dDEXy1RMewRzNRI3LjtOZd3-wGEiG969wLs0YbmuMWVpCt3fOxpRUPDj5oGjjHGCsKzqq5W9BoTcf4eeEtgW62M5TXBuQSSCmFI485vydxOzuWyLJEiy6sLfSdpx1~BC2Pb~xu~McdaZc4CcaFoPBrSxC3vCH2D7G~1Pg__');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.tech-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 50%, rgba(255, 183, 0, 0.1) 51%, transparent 52%) 0 0 / 50px 100%,
+    linear-gradient(0deg, transparent 50%, rgba(255, 0, 0, 0.1) 51%, transparent 52%) 0 0 / 100% 50px;
+  animation: tech-scan 15s linear infinite;
+}
+
+.arc-reactor {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  background: 
+    radial-gradient(circle at center, rgba(255, 183, 0, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at center, rgba(255, 0, 0, 0.1) 20%, transparent 70%);
+  animation: reactor 4s infinite ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Card Themes with GIF backgrounds */
+.card-codzilla {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(76, 29, 149, 0.85)),
+              url('https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  animation: borderGlow 2s infinite;
+}
+
+.card-excellencia {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(30, 58, 138, 0.85)),
+              url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2hoM3h5OTM5NjBoc2Q4NHV5eHNicTJ5OTJkeHk4ZXNwa3h0dXpnOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gicYGfRxoJlFqYpwnE/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.card-onepiece {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(120, 53, 15, 0.85)),
+              url('https://i.pinimg.com/originals/bd/a3/b6/bda3b64c64f7fdc7b267b55483f72dea.gif');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-innohack {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(20, 83, 45, 0.85)),
+              url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG43bTJreTBoY3Z2bHB0dmNveHF2OGZ0aXF1dWoxNzBxZzFwNTBkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TFPdmm3rdzeZ0kP3zG/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+.card-squidgame {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(159, 18, 57, 0.85)),
+              url('https://i.pinimg.com/originals/c6/b9/6d/c6b96d66db25269e693ac08c1594e1cc.gif');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.2);
+}
+
+.card-codzilla:hover { 
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+  animation: glitch 0.3s infinite;
+}
+
+.card-excellencia:hover { 
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  transform: perspective(1000px) rotateY(10deg);
+}
+
+.card-onepiece:hover { 
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+  animation: float-treasure 3s ease-in-out infinite;
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 
+    0 0 30px rgba(245, 158, 11, 0.4),
+    -10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-innohack:hover { 
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.card-squidgame:hover { 
+  box-shadow: 0 0 30px rgba(244, 63, 94, 0.4);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.card-glow {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.modal-overlay {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 183, 0, 0.2), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+.card-title {
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.card-glow:hover .card-title::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(76, 31, 150, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(26, 7, 51, 0.8); }
+}
+
+@keyframes countdown-glitch {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.timer-box {
+  background: linear-gradient(135deg, #4607f5, #ce5a17);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: rgb(7, 7, 7);
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out, pulse-glow 2s infinite;
+}
+
+.timer-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(240, 74, 74, 0.2), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite linear;
+}
+
+.timer-box:hover {
+  animation: countdown-glitch 0.2s infinite;
+}
+
+/* Add these new animations */
+@keyframes float-treasure {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes tech-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+  50% { transform: scale(1.02); box-shadow: 0 0 30px rgba(34, 197, 94, 0.4); }
+  100% { transform: scale(1); box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+}
+
+/* Add transition for description text */
+.card-onepiece .animate-slide-in,
+.card-innohack .animate-slide-in {
+  animation: slideInDesc 0.6s ease-out forwards;
+}
+
+@keyframes slideInDesc {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 1s linear infinite;
+}
+
+.text-glow:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+               0 0 20px rgba(47, 146, 177, 0.8),
+               0 0 30px rgba(233, 99, 199, 0.8);
+}
